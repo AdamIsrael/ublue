@@ -52,7 +52,9 @@ flatpak_install () {
     for application in "${applications[@]}"; do
         echo "$((100*(++i)/n))"
         /usr/bin/flatpak install $1 --assumeyes --noninteractive --or-update $application
-    done | progressbar
+    done
+    # Temporarily disable progress bar to track down unbound variable
+    # done | progressbar
 }
 
 echo "Installing Flatpak(s)..."
