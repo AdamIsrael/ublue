@@ -23,7 +23,7 @@ is_ostree_idle () {
 
 # http://mywiki.wooledge.org/BashFAQ/044
 progressbar() {
-    local max=$((${COLUMNS:-$(tput cols)} - 2)) in n i
+    local max=$((${COLUMNS:-$(tput cols)} - 2)) in length i
     while read -r in; do
         n=$((max*in/100))
         printf '\r['
